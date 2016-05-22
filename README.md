@@ -16,11 +16,11 @@ The software and data of the performed experiments are available here:
 
 # Experiment Code
 
-The Eclipse project containing the implementation of the proposed approach and the experiment are available here in this repository
+The Eclipse project containing the implementation of the proposed approach is in the folder "CollectiveAdaptationFramework".
 
 # Experiment results
 
-Experiment raw data and the set of R scripts e used for analizing it are available here: experiment results
+Experiment raw data and the set of R scripts used for analizing it are available in the folder "Experiments".
 
 # Abstract
 Modern service-based systems are becoming more and more socio-technical, composed of distributed and heterogeneous entities, their environment, a mixture of people and software services. These systems operate under continuous perturbations due both to umpredicted behaviours of people and occurrence of exogenous changes in the environment. 
