@@ -6,9 +6,9 @@ Service-based Collective Adaptive Systems”.
 This study has been designed, developed, and reported by the following investigators:
 
 
-Antonio Bucchiarone - Fondazione Bruno Kessler
-Martina de Sanctis - Fondazione Bruno Kessler
-Annapaola Marconi - Fondazione Bruno Kessler
+- Antonio Bucchiarone - Fondazione Bruno Kessler
+- Martina de Sanctis - Fondazione Bruno Kessler
+- Annapaola Marconi - Fondazione Bruno Kessler
 
 For any information, interested researchers can contact us by writing an email to bucchiarone@fbk.eu.
 
