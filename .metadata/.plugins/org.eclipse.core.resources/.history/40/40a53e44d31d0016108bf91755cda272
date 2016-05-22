@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ensemble name="CPCompany" xmlns:tns="http://das.fbk.eu/Ensemble"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://das.fbk.eu/Ensemble Ensemble.xsd ">
+
+<!-- Driver CPA -->
+<tns:role id="CPDriver_A" type="CPDriver_A">
+		<tns:domainObjectType>tns:domainObjectType</tns:domainObjectType>
+
+		
+		<tns:solver name="ExitRouteAndDropPP" selected="true">
+			<tns:issue>
+				<tns:issueType>ManageIntenseTraffic</tns:issueType>
+				<tns:issueCondition></tns:issueCondition>
+			</tns:issue>
+			<tns:solverCondition></tns:solverCondition>
+			<tns:solution name="SOL1">
+				<tns:internalSolution>Nothing</tns:internalSolution>
+				<tns:issue>
+					<!-- communicate to the Driver to change the route path dropping a PP -->
+					<tns:issueType>ChangePathDropPP</tns:issueType>
+					<tns:issueCondition>Exist</tns:issueCondition>
+				</tns:issue>
+				<tns:issue>
+					<!-- communicate to Passenger to plan alone exiting the ensemble -->
+					<tns:issueType>ExitAndRePlan</tns:issueType>
+					<tns:issueCondition>Exist</tns:issueCondition>
+				</tns:issue>
+			</tns:solution>
+		</tns:solver>
+
+	</tns:role>
+	
+<!-- Driver CPB -->
+<tns:role id="CPDriver_B" type="CPDriver_B">
+		<tns:domainObjectType>tns:domainObjectType</tns:domainObjectType>
+
+		
+		<tns:solver name="ExitRouteAndDropPP" selected="true">
+			<tns:issue>
+				<tns:issueType>ManageIntenseTraffic</tns:issueType>
+				<tns:issueCondition></tns:issueCondition>
+			</tns:issue>
+			<tns:solverCondition></tns:solverCondition>
+			<tns:solution name="SOL1">
+				<tns:internalSolution>Nothing</tns:internalSolution>
+				<tns:issue>
+					<!-- communicate to the Driver to change the route path dropping a PP -->
+					<tns:issueType>ChangePathDropPP</tns:issueType>
+					<tns:issueCondition>Exist</tns:issueCondition>
+				</tns:issue>
+				<tns:issue>
+					<!-- communicate to Passenger to plan alone exiting the ensemble -->
+					<tns:issueType>ExitAndRePlan</tns:issueType>
+					<tns:issueCondition>Exist</tns:issueCondition>
+				</tns:issue>
+			</tns:solution>
+		</tns:solver>
+
+	</tns:role>
+	
+	
+	
+	<!-- CP Manager -->
+<tns:role id="CPManager" type="CPManager">
+		<tns:domainObjectType>tns:domainObjectType</tns:domainObjectType>
+
+		
+		<tns:solver name="ExitRouteAndDropPP" selected="true">
+			<tns:issue>
+				<tns:issueType>ManageIntenseTraffic</tns:issueType>
+				<tns:issueCondition></tns:issueCondition>
+			</tns:issue>
+			<tns:solverCondition></tns:solverCondition>
+			<tns:solution name="SOL1">
+				<tns:internalSolution>Nothing</tns:internalSolution>
+				<tns:issue>
+					<!-- communicate to the Driver to change the route path dropping a PP -->
+					<tns:issueType>ChangePathDropPP</tns:issueType>
+					<tns:issueCondition>Exist</tns:issueCondition>
+				</tns:issue>
+				<tns:issue>
+					<!-- communicate to Passenger to plan alone exiting the ensemble -->
+					<tns:issueType>ExitAndRePlan</tns:issueType>
+					<tns:issueCondition>Exist</tns:issueCondition>
+				</tns:issue>
+			</tns:solution>
+		</tns:solver>
+
+	</tns:role>
+	
+	
+	
+
+
+	<tns:variable>NMTOKEN</tns:variable>
+</tns:ensemble>

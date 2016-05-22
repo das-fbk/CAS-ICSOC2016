@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ensemble name="CPRideA" xmlns:tns="http://das.fbk.eu/Ensemble"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://das.fbk.eu/Ensemble Ensemble.xsd ">
+	<!-- Driver CPA -->
+
+
+	<tns:role id="CPDriver_A" type="CPDriver_A">
+		<tns:domainObjectType>tns:domainObjectType</tns:domainObjectType>
+
+		
+		<tns:solver name="ExitRouteAndDropPP" selected="true">
+			<tns:issue>
+				<tns:issueType>ManageIntenseTraffic</tns:issueType>
+				<tns:issueCondition></tns:issueCondition>
+			</tns:issue>
+			<tns:solverCondition></tns:solverCondition>
+			<tns:solution name="SOL1">
+				<tns:internalSolution>Nothing</tns:internalSolution>
+				<tns:issue>
+					<!-- communicate to the Driver to change the route path dropping a PP -->
+					<tns:issueType>ChangePathDropPP</tns:issueType>
+					<tns:issueCondition>Exist</tns:issueCondition>
+				</tns:issue>
+				<tns:issue>
+					<!-- communicate to Passenger to plan alone exiting the ensemble -->
+					<tns:issueType>ExitAndRePlan</tns:issueType>
+					<tns:issueCondition>Exist</tns:issueCondition>
+				</tns:issue>
+			</tns:solution>
+		</tns:solver>
+
+	</tns:role>
+
+	
+
+	<!-- CP PASSENGER P1 -->
+	<tns:role id="CPPassenger_1" type="CPPassenger_1">
+		<tns:domainObjectType>tns:domainObjectType</tns:domainObjectType>
+	<tns:solver name="ExitAndChange" selected="true">
+			<tns:issue>
+				<tns:issueType>ExitAndChangeP1</tns:issueType>
+				<tns:issueCondition></tns:issueCondition>
+			</tns:issue>
+			<tns:solverCondition></tns:solverCondition>
+			<tns:solution cost="3" name="sol" time="35">
+				<tns:internalSolution>ExitAndChange</tns:internalSolution>
+			</tns:solution>
+		</tns:solver>	 
+	</tns:role>
+
+		<!-- CP PASSENGER P2 -->
+	<tns:role id="CPPassenger_2" type="CPPassenger_2">
+		<tns:domainObjectType>tns:domainObjectType</tns:domainObjectType>
+		
+	
+		<tns:solver name="ExitAndChange" selected="true">
+			<tns:issue>
+				<tns:issueType>ExitAndChangeP2</tns:issueType>
+				<tns:issueCondition></tns:issueCondition>
+			</tns:issue>
+			<tns:solverCondition></tns:solverCondition>
+			<tns:solution cost="10" name="sol" time="20">
+				<tns:internalSolution>ExitAndChange</tns:internalSolution>
+			</tns:solution>
+		</tns:solver>	
+		
+		
+		
+	</tns:role>
+
+
+	<tns:variable>NMTOKEN</tns:variable>
+</tns:ensemble>

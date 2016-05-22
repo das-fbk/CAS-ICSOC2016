@@ -44,6 +44,9 @@ import allow.simulator.collective.adaptation.model.IssueResolution;
 import allow.simulator.collective.adaptation.presentation.action.IssueTableSelectionListener;
 import allow.simulator.collective.adaptation.presentation.action.MouseTreeNodeListener;
 import allow.simulator.collective.adaptation.presentation.action.RankedSolutionTableSelectionListener;
+import allow.simulator.mobility.planner.Itinerary;
+import allow.simulator.mobility.planner.JourneyRequest;
+import allow.simulator.mobility.planner.OnlineJourneyPlanner;
 
 public class CAWindow extends JFrame {
 
@@ -479,7 +482,15 @@ public class CAWindow extends JFrame {
 	// for each ensemble
 	for (String ensemble : cas.getEnsembleCommands().keySet()) {
 	    // get commands
+
 	    List<RoleCommand> commands = cas.getEnsembleCommands().get(ensemble);
+	    // call the JourneyPlanner to find an alternative plan
+	    OnlineJourneyPlanner ojp = new OnlineJourneyPlanner(ensemble, 0, null);
+	    // allow.simulator.planner.OnlineJourneyPlanner
+	    JourneyRequest jr = new JourneyRequest();
+	    jr.Date = "13/4/2016";
+	    List<Itinerary> result = ojp.requestSingleJourney(jr);
+	    System.out.println(result);
 	    for (int i = 0; i < commands.size(); i++) {
 		executor.applyCommand(ensemble, commands.get(i));
 	    }

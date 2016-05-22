@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CollectiveAdaptation-FBK&apos; to &apos;CollectiveAdaptationFramework&apos;" description="Rename resource &apos;CollectiveAdaptation-FBK&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/CollectiveAdaptation-FBK" name="CollectiveAdaptationFramework" stamp="1463925095008" updateReferences="true"/>
+</session>

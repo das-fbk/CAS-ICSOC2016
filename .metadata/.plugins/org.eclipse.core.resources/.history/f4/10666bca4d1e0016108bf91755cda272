@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:ensemble name="CPCompany" xmlns:tns="http://das.fbk.eu/Ensemble"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://das.fbk.eu/Ensemble Ensemble.xsd ">
+
+<!-- Driver CPA -->
+<tns:role id="CPDriver_A" type="CPDriver_A">
+	<tns:domainObjectType>tns:domainObjectType</tns:domainObjectType>
+
+</tns:role>
+	
+<!-- Driver CPB -->
+<tns:role id="CPDriver_B" type="CPDriver_B">
+	<tns:domainObjectType>tns:domainObjectType</tns:domainObjectType>
+
+</tns:role>
+	
+	
+<!-- CP Manager -->
+<tns:role id="CPManager" type="CPManager">
+	<tns:domainObjectType>tns:domainObjectType</tns:domainObjectType>
+	
+
+
+	
+</tns:role>
+	
+	
+	
+<tns:variable>NMTOKEN</tns:variable>
+</tns:ensemble>
