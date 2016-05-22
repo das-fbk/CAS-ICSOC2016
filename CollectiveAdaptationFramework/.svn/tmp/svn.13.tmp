@@ -1,0 +1,9 @@
+package eu.fbk.das.adaptation.api;
+
+public interface CollectiveAdaptationInterface {
+
+    // public CollectiveAdaptationSolution
+    // executeCap(CollectiveAdaptationProblem cap);
+    public void executeCap(CollectiveAdaptationProblem cap);
+
+}

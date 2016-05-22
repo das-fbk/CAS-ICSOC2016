@@ -1,0 +1,55 @@
+package de.dfki.ek;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+    public static void main(String args[]) {
+	String modelPath = "jdbc:mysql://localhost:3306/";
+	String modelName = "ek_adaptation";
+	String userName = "root";
+	String password = "";
+
+	// Create EKConfiguration or read from file
+	EKConfiguration config = new EKConfiguration(modelPath, modelName, userName, password);
+
+	// Initialize EvoKnowledge
+	EvoKnowledge.initialize(config, "ek", false);
+
+	// Create a new instance of EvoKnowledge
+	EvoKnowledge ek = EvoKnowledge.createEvoKnowledge();
+
+	// Learn parameters
+	List<Experience> experiences = new ArrayList<Experience>();
+	int issueType = 0;
+	int numberOfPassengersWaiting = 17;
+	int numberOfPassengers = 2;
+	int weekday = 3;
+	int timeOfDay = 3;
+	int modality = 2;
+	int solverType = 20;
+	double utility = 45.0;
+
+	Experience experience = new Experience(issueType, solverType, numberOfPassengersWaiting, numberOfPassengers,
+		weekday, timeOfDay, modality, utility);
+	experiences.add(experience);
+	ek.learn(experiences);
+
+	// Predict parameters
+	int issueTypePred = 0;
+	int numberOfPassengersWaitingPred = 20;
+	int numberOfPassengersPred = 2;
+	int weekdayPred = 5;
+	int timeOfDayPred = 4;
+	int modalityPred = 2;
+	Query query = new Query(issueTypePred, numberOfPassengersWaitingPred, numberOfPassengersPred, weekdayPred,
+		timeOfDayPred, modalityPred);
+	List<Prediction> predicted = ek.predict(query);
+	System.out.println(predicted);
+
+	// Clean model
+	// ek.cleanModel();
+
+    }
+}

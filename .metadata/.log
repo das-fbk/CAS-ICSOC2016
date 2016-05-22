@@ -9375,3 +9375,148 @@ Caused by: java.net.URISyntaxException: Illegal character in path at index 45: h
 	at java.net.URL.toURI(URL.java:938)
 	at org.eclipse.jgit.util.HttpSupport.proxyFor(HttpSupport.java:228)
 	... 11 more
+
+!ENTRY org.eclipse.egit.core 4 0 2016-05-22 16:27:52.390
+!MESSAGE An exception occurred during push on URI https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: cannot open git-receive-pack
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: cannot open git-receive-pack
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:164)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:228)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:167)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:229)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: cannot open git-receive-pack
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:518)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:387)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1200)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:157)
+	... 4 more
+Caused by: java.net.ConnectException: Cannot determine proxy for https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized/info/refs?service=git-receive-pack
+	at org.eclipse.jgit.util.HttpSupport.proxyFor(HttpSupport.java:231)
+	at org.eclipse.jgit.transport.TransportHttp.httpOpen(TransportHttp.java:537)
+	at org.eclipse.jgit.transport.TransportHttp.httpOpen(TransportHttp.java:523)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:462)
+	... 8 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 45: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized/info/refs?service=git-receive-pack
+	at java.net.URI$Parser.fail(URI.java:2829)
+	at java.net.URI$Parser.checkChars(URI.java:3002)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3086)
+	at java.net.URI$Parser.parse(URI.java:3034)
+	at java.net.URI.<init>(URI.java:595)
+	at java.net.URL.toURI(URL.java:938)
+	at org.eclipse.jgit.util.HttpSupport.proxyFor(HttpSupport.java:228)
+	... 11 more
+
+!ENTRY org.eclipse.egit.core 4 0 2016-05-22 16:28:53.897
+!MESSAGE An exception occurred during push on URI https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: cannot open git-receive-pack
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: cannot open git-receive-pack
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:518)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:387)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1200)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:197)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:167)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:229)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.net.ConnectException: Cannot determine proxy for https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized/info/refs?service=git-receive-pack
+	at org.eclipse.jgit.util.HttpSupport.proxyFor(HttpSupport.java:231)
+	at org.eclipse.jgit.transport.TransportHttp.httpOpen(TransportHttp.java:537)
+	at org.eclipse.jgit.transport.TransportHttp.httpOpen(TransportHttp.java:523)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:462)
+	... 7 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 45: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized/info/refs?service=git-receive-pack
+	at java.net.URI$Parser.fail(URI.java:2829)
+	at java.net.URI$Parser.checkChars(URI.java:3002)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3086)
+	at java.net.URI$Parser.parse(URI.java:3034)
+	at java.net.URI.<init>(URI.java:595)
+	at java.net.URL.toURI(URL.java:938)
+	at org.eclipse.jgit.util.HttpSupport.proxyFor(HttpSupport.java:228)
+	... 10 more
+
+!ENTRY org.eclipse.egit.core 4 0 2016-05-22 16:29:06.004
+!MESSAGE An exception occurred during push on URI https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: cannot open git-receive-pack
+!STACK 0
+org.eclipse.jgit.errors.TransportException: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: cannot open git-receive-pack
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:518)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:387)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1200)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:197)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:167)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:229)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.net.ConnectException: Cannot determine proxy for https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized/info/refs?service=git-receive-pack
+	at org.eclipse.jgit.util.HttpSupport.proxyFor(HttpSupport.java:231)
+	at org.eclipse.jgit.transport.TransportHttp.httpOpen(TransportHttp.java:537)
+	at org.eclipse.jgit.transport.TransportHttp.httpOpen(TransportHttp.java:523)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:462)
+	... 7 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 45: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized/info/refs?service=git-receive-pack
+	at java.net.URI$Parser.fail(URI.java:2829)
+	at java.net.URI$Parser.checkChars(URI.java:3002)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3086)
+	at java.net.URI$Parser.parse(URI.java:3034)
+	at java.net.URI.<init>(URI.java:595)
+	at java.net.URL.toURI(URL.java:938)
+	at org.eclipse.jgit.util.HttpSupport.proxyFor(HttpSupport.java:228)
+	... 10 more
+
+!ENTRY org.eclipse.egit.core 4 0 2016-05-22 16:32:13.541
+!MESSAGE An exception occurred during push on URI https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: cannot open git-receive-pack
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: cannot open git-receive-pack
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:164)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:228)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:167)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:229)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized: cannot open git-receive-pack
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:518)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:387)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1200)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:157)
+	... 4 more
+Caused by: java.net.ConnectException: Cannot determine proxy for https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized/info/refs?service=git-receive-pack
+	at org.eclipse.jgit.util.HttpSupport.proxyFor(HttpSupport.java:231)
+	at org.eclipse.jgit.transport.TransportHttp.httpOpen(TransportHttp.java:537)
+	at org.eclipse.jgit.transport.TransportHttp.httpOpen(TransportHttp.java:523)
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:462)
+	... 8 more
+Caused by: java.net.URISyntaxException: Illegal character in path at index 45: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized/info/refs?service=git-receive-pack
+	at java.net.URI$Parser.fail(URI.java:2829)
+	at java.net.URI$Parser.checkChars(URI.java:3002)
+	at java.net.URI$Parser.parseHierarchical(URI.java:3086)
+	at java.net.URI$Parser.parse(URI.java:3034)
+	at java.net.URI.<init>(URI.java:595)
+	at java.net.URL.toURI(URL.java:938)
+	at org.eclipse.jgit.util.HttpSupport.proxyFor(HttpSupport.java:228)
+	... 11 more
+
+!ENTRY org.eclipse.egit.core 4 0 2016-05-22 16:36:01.902
+!MESSAGE An exception occurred during push on URI https://github.com/das-fbk/CAS-ICSOC2016.git: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized
+!STACK 0
+org.eclipse.jgit.api.errors.TransportException: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:164)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:228)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:167)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:229)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.jgit.errors.TransportException: https://github.com/das-fbk/CAS-ICSOC2016.git: not authorized
+	at org.eclipse.jgit.transport.TransportHttp.connect(TransportHttp.java:498)
+	at org.eclipse.jgit.transport.TransportHttp.openPush(TransportHttp.java:387)
+	at org.eclipse.jgit.transport.PushProcess.execute(PushProcess.java:154)
+	at org.eclipse.jgit.transport.Transport.push(Transport.java:1200)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:157)
+	... 4 more
+
+!ENTRY org.tigris.subversion.clientadapter.javahl 1 0 2016-05-22 16:47:57.691
+!MESSAGE Failed to load JavaHL Library.
+These are the errors that were encountered:
+no libsvnjavahl-1 in java.library.path
+no svnjavahl-1 in java.library.path
+no svnjavahl in java.library.path
+java.library.path = /Users/antoniobucchiarone/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.

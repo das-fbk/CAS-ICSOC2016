@@ -1,0 +1,38 @@
+package eu.fbk.das.adaptation;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+
+import eu.fbk.das.adaptation.api.CollectiveAdaptationInterface;
+import eu.fbk.das.adaptation.api.CollectiveAdaptationProblem;
+import eu.fbk.das.adaptation.api.CollectiveAdaptationSolution;
+import eu.fbk.das.adaptation.api.RoleCommand;
+
+public class DummyCAP implements CollectiveAdaptationInterface {
+
+    @Override
+    public CollectiveAdaptationSolution executeCap(CollectiveAdaptationProblem cap) {
+
+	String capID = "1";
+	String ensembleName = "Ensemble_1";
+	HashMap<String, List<RoleCommand>> ensembleCommands = new HashMap<String, List<RoleCommand>>();
+	// RoutePassenger
+	// FlexiBusDriver
+
+	List<RoleCommand> roleCommands = new ArrayList<RoleCommand>();
+
+	RoleCommand rc1 = new RoleCommand(Arrays.asList("Nothing"), capID);
+	RoleCommand rc2 = new RoleCommand(Arrays.asList("Nothing"), capID);
+	RoleCommand rc3 = new RoleCommand(Arrays.asList("UseOnlyBike"), capID);
+	RoleCommand DriverRC = new RoleCommand(Arrays.asList("ChangeRoutePath"), capID);
+	roleCommands.addAll(Arrays.asList(rc1, rc2, rc3, DriverRC));
+	ensembleCommands.put(ensembleName, roleCommands);
+
+	CollectiveAdaptationSolution solution = new CollectiveAdaptationSolution(capID, ensembleCommands);
+
+	return solution;
+    }
+
+}

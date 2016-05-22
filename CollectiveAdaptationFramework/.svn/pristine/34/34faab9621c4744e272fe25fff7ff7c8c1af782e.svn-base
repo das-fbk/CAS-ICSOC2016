@@ -1,0 +1,20 @@
+package de.dfki.ek;
+
+public class Prediction {
+
+	int solverType;
+	double estimatedUtility;
+	
+	public Prediction(int solverType, double estimatedUtility) {
+		this.solverType = solverType;
+		this.estimatedUtility = estimatedUtility;
+	}
+	
+	public int getSolverType() {
+		return solverType;
+	}
+	
+	public double getEstimatedUtility() {
+		return estimatedUtility;
+	}
+}

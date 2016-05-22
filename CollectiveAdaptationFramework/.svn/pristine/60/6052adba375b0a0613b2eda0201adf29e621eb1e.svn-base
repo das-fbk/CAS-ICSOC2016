@@ -1,0 +1,32 @@
+package eu.fbk.das.adaptation.api;
+
+import java.util.List;
+
+public class CollectiveAdaptationEnsemble {
+
+    private String EnsembleName;
+    private List<String> Roles;
+
+    public String getEnsembleName() {
+	return EnsembleName;
+    }
+
+    public void setEnsembleName(String ensembleName) {
+	EnsembleName = ensembleName;
+    }
+
+    public List<String> getRoles() {
+	return Roles;
+    }
+
+    public void setRoles(List<String> roles) {
+	Roles = roles;
+    }
+
+    public CollectiveAdaptationEnsemble(String ensembleName, List<String> roles) {
+	super();
+	EnsembleName = ensembleName;
+	Roles = roles;
+    }
+
+}

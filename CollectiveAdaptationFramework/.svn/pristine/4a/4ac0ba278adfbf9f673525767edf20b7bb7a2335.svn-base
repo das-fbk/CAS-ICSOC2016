@@ -1,0 +1,173 @@
+package eu.fbk.das.adaptation;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Properties;
+
+import javax.naming.ConfigurationException;
+
+import de.dfki.ek.EKConfiguration;
+import de.dfki.ek.EvoKnowledge;
+import eu.fbk.das.adaptation.api.CollectiveAdaptationEnsemble;
+import eu.fbk.das.adaptation.api.CollectiveAdaptationInterface;
+import eu.fbk.das.adaptation.api.CollectiveAdaptationProblem;
+import eu.fbk.das.adaptation.api.CollectiveAdaptationSolution;
+import eu.fbk.das.adaptation.ensemble.Ensemble;
+import eu.fbk.das.adaptation.ensemble.Issue;
+import eu.fbk.das.adaptation.experiment.Utilities;
+import eu.fbk.das.adaptation.model.IssueCommunication;
+import eu.fbk.das.adaptation.model.IssueResolution;
+import eu.fbk.das.adaptation.presentation.CAWindow;
+
+public class DemonstratorAnalyzer implements CollectiveAdaptationInterface {
+
+    private final static String PROP_PATH = "adaptation.properties";
+
+    private final static String PreferencesDir = "scenario/ALLOWEnsembles/Preferences/";
+
+    @Override
+    public CollectiveAdaptationSolution executeCap(CollectiveAdaptationProblem cap) {
+	// call the analyzer with the specific CAP
+	CollectiveAdaptationSolution solution = null;
+
+	return solution;
+
+    }
+
+    public void run(List<EnsembleManager> ensembles, CAWindow window) {
+
+	Issue issue = new Issue();
+	issue.setIssueType("IntenseTraffic");
+	RoleManager r = ensembles.get(0).getRolebyType("DriverA");
+	System.out.println("ISSUE TRIGGERED: " + issue.getIssueType());
+
+	IssueResolution resolution1 = new IssueResolution(1, "ISSUE_TRIGGERED", r, r, issue, null);
+	resolution1.setRoot(true);
+	r.addIssueResolution(resolution1);
+
+	// add the issueresolution to the right Ensemble
+	for (int i = 0; i < ensembles.size(); i++) {
+	    for (int j = 0; j < ensembles.get(i).getRolesManagers().size(); j++) {
+		RoleManager currentManager = ensembles.get(i).getRolesManagers().get(j);
+		if (currentManager.getRole().getType().equalsIgnoreCase(r.getRole().getType())) {
+		    ArrayList<IssueResolution> resolutions = new ArrayList<IssueResolution>();
+
+		    EnsembleManager em = ensembles.get(i);
+		    if (em.getIssueCommunications() != null) {
+			em.getIssueCommunications().clear();
+		    }
+
+		    // update id of the issue resolution
+		    em.setIssueResolutionCount(1);
+		    resolution1.setIssueResolutionID(em.getIssueResolutionCount());
+
+		    resolutions.add(resolution1);
+		    em.setActiveIssueResolutions(resolutions);
+
+		    List<IssueCommunication> relatedComs = new ArrayList<IssueCommunication>();
+
+		    em.setCommunicationsRelations(resolution1, relatedComs);
+		    System.out.println(em.getIssueCommunications().size());
+
+		    String capID = Integer.toString(1);
+
+		    System.out.println(em.getIssueCommunications().size());
+
+		    em.checkIssues(capID, window, ensembles);
+
+		    break;
+		}
+	    }
+	}
+
+    }
+
+    public static void main(String[] args) throws ConfigurationException, FileNotFoundException {
+
+	System.gc();
+	// reading property file
+	String propPath = PROP_PATH;
+	if (args.length > 0) {
+	    propPath = args[0];
+	}
+	Properties props = new Properties();
+	try {
+	    props.load(new FileInputStream(propPath));
+	} catch (IOException e) {
+	    System.err.println("Cannot read configuration file: " + e.getMessage());
+	}
+
+	/////// Evoknowledge SETUP/////////
+	// String modelPath = "jdbc:postgresql://localhost:5432/";
+	String modelPath = "jdbc:mysql://localhost:3306/";
+	String modelName = "allowek";
+	String userName = "root";
+	String password = "";
+
+	// Create EKConfiguration or read from file
+	EKConfiguration config = new EKConfiguration(modelPath, modelName, userName, password);
+
+	// Initialize EvoKnowledge
+	EvoKnowledge.initialize(config, "ek");
+
+	// Create a new instance of EvoKnowledge
+	EvoKnowledge ek = EvoKnowledge.createEvoKnowledge();
+	//////////////////////////////
+
+	// demo management system construction
+
+	DemoManagementSystem dms = DemoManagementSystem.initializeSystem("scenario/ALLOWEnsembles/Review/");
+
+	// List<Treatment> treatments = ExperimentMain.createTreatments();
+
+	// Ensemble Creation - Instance of Ensemble Route A
+	Ensemble routeA = dms.getEnsemble("RouteA");
+	EnsembleManager routeAManager = new EnsembleManager(routeA);
+
+	// Ensemble Creation - Instance of Ensemble Route B
+	Ensemble routeB = dms.getEnsemble("RouteB");
+	EnsembleManager routeBManager = new EnsembleManager(routeB);
+
+	// Ensemble Creation - Instance of Ensemble FlexiBus Management
+	Ensemble flexiBusMngmt = dms.getEnsemble("FlexiBusMngmt");
+	EnsembleManager flexiBusMngmtBManager = new EnsembleManager(flexiBusMngmt);
+
+	// set the Evoknowledge of the Ensemble
+	routeAManager.setEk(ek);
+
+	List<EnsembleManager> ensembles = new ArrayList<EnsembleManager>();
+	ensembles.add(routeAManager);
+	ensembles.add(routeBManager);
+	ensembles.add(flexiBusMngmtBManager);
+
+	Utilities.buildSolversMap(ensembles);
+	// System.out.println(Utilities.getSolversMap());
+
+	System.gc();
+	try {
+	    System.out.println("Experiment starting in 5 seconds...");
+	    Thread.sleep(5000);
+	} catch (InterruptedException e) {
+	    e.printStackTrace();
+	}
+
+	DemonstratorAnalyzer analyzer = new DemonstratorAnalyzer();
+
+	List<CollectiveAdaptationEnsemble> ensembles1 = new ArrayList<CollectiveAdaptationEnsemble>();
+	ensembles1.add(new CollectiveAdaptationEnsemble("Ensemble_1",
+		Arrays.asList("RoutePassenger_1", "RoutePassenger_2", "RoutePassenger_3", "FlexibusDriver_1")));
+
+	CollectiveAdaptationProblem cap = new CollectiveAdaptationProblem("CAP_1", ensembles1, "FlexibusDelayIssue");
+
+	CollectiveAdaptationSolution cas = analyzer.executeCap(cap);
+
+	System.out.println("END SIMULATION");
+	// System.exit(1);
+
+    }
+
+}
