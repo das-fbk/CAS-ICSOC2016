@@ -12,38 +12,38 @@
 	<section name="org.eclipse.egit.ui.internal.dialogs.ResetTargetSelectionDialog.dialogBounds">
 		<item value="525" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="728" key="DIALOG_HEIGHT"/>
 		<item value="378" key="DIALOG_X_ORIGIN"/>
+		<item value="728" key="DIALOG_HEIGHT"/>
 		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="GitCommitMessageComponent">
 		<list key="/Users/antoniobucchiarone/Desktop/CAS-ICSOC2016/.git">
 			<item value="false"/>
 			<item value="Antonio Bucchiarone &lt;bucchiarone@fbk.eu&gt;"/>
-			<item value="&#x0D;&#x0D;Signed-off-by: Antonio Bucchiarone &lt;bucchiarone@fbk.eu&gt;"/>
+			<item value="# WARNING: head commit changed in the meantime&#x0D;&#x0D;&#x0D;&#x0D;Signed-off-by: Antonio Bucchiarone &lt;bucchiarone@fbk.eu&gt;"/>
 			<item value="Antonio Bucchiarone &lt;bucchiarone@fbk.eu&gt;"/>
-			<item value="c0a3576590dc873c25fde8a22a44ec2c3743648e"/>
+			<item value="5d2dc8e300fc426573e1b09515b94ab32fb76b4c"/>
 		</list>
 	</section>
 	<section name="org.eclipse.egit.ui.COMMIT_DIALOG_SECTION">
 		<item value="626" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="327" key="DIALOG_X_ORIGIN"/>
 		<item value="623" key="DIALOG_HEIGHT"/>
+		<item value="327" key="DIALOG_X_ORIGIN"/>
 		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.fetch.FetchResultDialog.dialogBounds">
 		<item value="600" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="440" key="DIALOG_HEIGHT"/>
 		<item value="5" key="DIALOG_X_ORIGIN"/>
+		<item value="440" key="DIALOG_HEIGHT"/>
 		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.push.PushResultDialog.dialogBounds">
 		<item value="650" key="DIALOG_WIDTH"/>
 		<item value="77" key="DIALOG_Y_ORIGIN"/>
-		<item value="440" key="DIALOG_HEIGHT"/>
 		<item value="285" key="DIALOG_X_ORIGIN"/>
+		<item value="440" key="DIALOG_HEIGHT"/>
 		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText-Regular" key="DIALOG_FONT_NAME"/>
 		<list key="sashWeights">
 			<item value="600"/>
@@ -51,8 +51,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
-		<item value="200,200" key="HORIZONTAL_SASH_FORM_WEIGHT"/>
+		<item value="500,500" key="HORIZONTAL_SASH_FORM_WEIGHT"/>
 		<item value="false" key="sortItemState"/>
-		<item value="200,200" key="STAGING_SASH_FORM_WEIGHT"/>
+		<item value="500,500" key="STAGING_SASH_FORM_WEIGHT"/>
 	</section>
 </section>

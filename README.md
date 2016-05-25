@@ -7,7 +7,7 @@ This study has been designed, developed, and reported by the following investiga
 
 
 - Antonio Bucchiarone - Fondazione Bruno Kessler
-- Martina De Sanctis - Fondazione Bruno Kessler
+- Martina de Sanctis - Fondazione Bruno Kessler
 - Annapaola Marconi - Fondazione Bruno Kessler
 
 For any information, interested researchers can contact us by writing an email to bucchiarone@fbk.eu.
@@ -16,14 +16,17 @@ The software and data of the performed experiments are available here:
 
 # Experiment Code
 
-The Eclipse project containing the implementation of the proposed approach is in the folder "CollectiveAdaptationFramework".
+The Eclipse project containing the implementation of the proposed approach and the experiment are available here in this repository
 
 # Experiment results
 
-Experiment raw data and the set of R scripts used for analizing it are available in the folder "Experiments".
+Experiment raw data and the set of R scripts e used for analizing it are available here: experiment results
 
 # Abstract
-Modern service-basedsystems are progressively becoming more heterogeneous. They form a socio-technical system, composed of distributed entities, software and human participants, interacting with and within the environment. These systems operate under constant perturbations that are due to unexpected changes in the environment and to the unpredictable behavior of the participants. We argue that for a service-based system to be resilient, adaptation must be collective. Multiple participants must adapt their behavior in concert to respond to critical runtime impediments. In this work, we present a framework for the modeling and execution of large-scale service-based Collective Adaptive Systems. Adaptation needs are solved in a decentralized and collective manner. To demonstrate the generality of the framework, we apply it to two application domains through which the main features are illustrated and evaluated: the Urban Mobility system and the Surveillance system.
+Modern service-based systems are becoming more and more socio-technical, composed of distributed and heterogeneous entities, their environment, a mixture of people and software services. These systems operate under continuous perturbations due both to umpredicted behaviours of people and occurrence of exogenous changes in the environment. 
+In these settings, for a service-based system to be resilient, adaptation must be collective, that is multiple entities must adapt simultaneously in a way that addresses critical runtime conditions whilst preserving the benefits of the collaborative inter-dependencies.
+
+In this work, we present a framework for the development and operation of large-scale, service-based Collective Adaptive Systems, where adaptation needs are solved in a decentralized and collective fashion. To demonstrate the generality of the framework, we apply it in two different application domains, namely the Urban Mobility system and the Surveillance system, through which its main features are illustrated and evaluated.
 
 # License
 Please see LICENSE file
