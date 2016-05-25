@@ -4,4 +4,6 @@
 	<item value="983" key="passwordStores.size.x"/>
 	<item value="23" key="passwordStores.location.y"/>
 	<item value="63" key="passwordStores.location.x"/>
+	<section name="NewLocationWizard">
+	</section>
 </section>

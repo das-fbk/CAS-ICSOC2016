@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <syncparticipants>
+<participant displayName="SVN (/CollectiveAdaptationFramework)" id="org.tigris.subversion.subclipse.participant" secondary_id="1464189035543">
+<data root="false">
+<org.eclipse.team.ui.TEAMSUBSRCIBERSETTINGS org.eclipse.team.ui.SCOPE_TYPE="ResourceScope">
+<org.eclipse.team.ui.TEAMSUBSRCIBER_REFRESHSCHEDULE org.eclipse.team.ui.CTX_REFRESHSCHEDULE_ENABLED="false" org.eclipse.team.ui.CTX_REFRESHSCHEDULE_INTERVAL="3600" org.eclipse.team.ui.CTX_REFRESHSCHEDULE_RUNONCE="false"/>
+<resource_scope_roots resource_scope_root_resource="/CollectiveAdaptationFramework"/>
+</org.eclipse.team.ui.TEAMSUBSRCIBERSETTINGS>
+</data>
+</participant>
 <participant displayName="Git (CollectiveAdaptationFramework)" id="org.eclipse.egit.ui.modelCompareParticipant" secondary_id="1463928536241">
 <data forceFetch="false" root="false">
 <org.eclipse.team.ui.MODEL_PARTICIPANT_SETTINGS org.eclipse.team.ui.MODEL_PARTICIPANT_DESCRIPTION="CollectiveAdaptationFramework" startupAction="none">
@@ -10,7 +18,6 @@
 </mappings>
 </org.eclipse.team.ui.MODEL_PARTICIPANT_MAPPINGS>
 </org.eclipse.team.ui.MODEL_PARTICIPANT_SETTINGS>
-<gitSynchronizeData container="/Users/antoniobucchiarone/Desktop/CAS-ICSOC2016/CollectiveAdaptationFramework" dstRev="refs/remotes/origin/master" inludeLocal="true" srcRev="HEAD"/>
 </data>
 </participant>
 </syncparticipants>
